@@ -15,6 +15,12 @@ Toolkit 是一个集成多种小工具和小游戏的单页网站，用户可以
 ├── index.html          # 主页面
 ├── style.css           # 样式文件
 ├── script.js           # 功能实现
+├── tools/              # 工具和游戏文件夹
+│   ├── calculator/     # 计算器工具
+│   │   ├── index.html  # 计算器页面
+│   │   ├── style.css   # 计算器样式
+│   │   └── script.js   # 计算器功能
+│   └── ...             # 其他工具和游戏
 ├── PRD.md              # 产品需求文档
 └── README.md           # 项目说明文档
 ```
@@ -30,8 +36,20 @@ Toolkit 是一个集成多种小工具和小游戏的单页网站，用户可以
 ## 如何添加新项目
 要向 Toolkit 添加新的工具或游戏，请按照以下步骤操作：
 
-### 1. 在 script.js 文件中添加新项目
-在 `tools` 数组中添加一个新对象，包含以下属性：
+### 1. 创建工具文件夹
+在 `tools` 目录下创建一个新的文件夹，用于存放工具的相关文件，例如：
+```
+tools/calculator/  // 计算器工具
+```
+
+### 2. 创建工具文件
+在新创建的文件夹中，创建以下文件：
+- `index.html`：工具的主页面
+- `style.css`：工具的样式文件
+- `script.js`：工具的功能实现
+
+### 3. 在 script.js 文件中注册新项目
+在主网站的 `script.js` 文件中的 `tools` 数组中添加一个新对象，包含以下属性：
 
 ```javascript
 {
@@ -39,17 +57,18 @@ Toolkit 是一个集成多种小工具和小游戏的单页网站，用户可以
     name: "新项目名称", // 显示名称
     type: "tool", // 类型："tool" 或 "game"
     image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=项目描述&image_size=square", // 图片URL
-    description: "项目描述" // 项目描述
+    description: "项目描述", // 项目描述
+    path: "tools/文件夹名称" // 工具文件夹路径
 }
 ```
 
-### 2. 图片生成
+### 4. 图片生成
 使用提供的图片生成API，替换 `prompt` 参数为项目相关的描述，例如：
 - 对于计算器工具：`calculator%20tool%20icon%20simple%20modern`
 - 对于贪吃蛇游戏：`snake%20game%20icon%20simple%20modern`
 
-### 3. 保存文件
-保存 `script.js` 文件后，刷新网站即可看到新添加的项目。
+### 5. 保存文件
+保存所有修改的文件后，刷新网站即可看到新添加的项目。
 
 ## 现有工具和游戏
 - **工具**：计算器、记事本、倒计时、随机数生成器

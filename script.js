@@ -5,56 +5,64 @@ const tools = [
         name: "计算器",
         type: "tool",
         image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=calculator%20tool%20icon%20simple%20modern&image_size=square",
-        description: "基本计算器工具"
+        description: "基本计算器工具",
+        path: "tools/calculator"
     },
     {
         id: 2,
         name: "记事本",
         type: "tool",
         image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=notepad%20tool%20icon%20simple%20modern&image_size=square",
-        description: "在线记事本"
+        description: "在线记事本",
+        path: "tools/notepad"
     },
     {
         id: 3,
         name: "倒计时",
         type: "tool",
         image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=countdown%20timer%20tool%20icon%20simple%20modern&image_size=square",
-        description: "倒计时工具"
+        description: "倒计时工具",
+        path: "tools/countdown"
     },
     {
         id: 4,
         name: "随机数生成器",
         type: "tool",
         image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=random%20number%20generator%20tool%20icon%20simple%20modern&image_size=square",
-        description: "生成随机数"
+        description: "生成随机数",
+        path: "tools/randomizer"
     },
     {
         id: 5,
         name: "贪吃蛇",
         type: "game",
         image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=snake%20game%20icon%20simple%20modern&image_size=square",
-        description: "经典贪吃蛇游戏"
+        description: "经典贪吃蛇游戏",
+        path: "tools/snake"
     },
     {
         id: 6,
         name: "扫雷",
         type: "game",
         image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minesweeper%20game%20icon%20simple%20modern&image_size=square",
-        description: "经典扫雷游戏"
+        description: "经典扫雷游戏",
+        path: "tools/minesweeper"
     },
     {
         id: 7,
         name: "2048",
         type: "game",
         image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=2048%20game%20icon%20simple%20modern&image_size=square",
-        description: "2048游戏"
+        description: "2048游戏",
+        path: "tools/2048"
     },
     {
         id: 8,
         name: "记忆翻牌",
         type: "game",
         image: "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=memory%20card%20game%20icon%20simple%20modern&image_size=square",
-        description: "记忆翻牌游戏"
+        description: "记忆翻牌游戏",
+        path: "tools/memory"
     }
 ];
 
@@ -122,8 +130,8 @@ function handleToolClick(tool) {
     saveStats();
     updateStatsDisplay();
     
-    // 简单的弹窗提示，实际项目中可以跳转到具体工具页面
-    alert(`你点击了${tool.name} (${tool.type})`);
+    // 跳转到工具页面
+    window.location.href = `${tool.path}/index.html`;
 }
 
 // 搜索功能
