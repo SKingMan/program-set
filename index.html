@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolkit - 工具集合</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Toolkit</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="total-clicks">0</span>
+                    <span class="stat-label">总点击</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="tool-uses">0</span>
+                    <span class="stat-label">工具使用</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="game-plays">0</span>
+                    <span class="stat-label">游戏游玩</span>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="搜索工具或游戏...">
+                <button id="search-btn">搜索</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="tool-grid" id="tool-grid">
+                <!-- 工具和游戏模块将通过JavaScript动态添加 -->
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
